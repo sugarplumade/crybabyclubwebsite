@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crybaby Club</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #ffcbcb;
+            padding: 20px;
+            text-align: center;
+            font-size: 2em;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #ff6f6f;
+        }
+        input[type="email"], select {
+            width: 80%;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #ff6f6f;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #ff4c4c;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    Crybaby Club
+</header>
+
+<div class="container">
+    <h2>We host live events in various places around Los Angeles, Washington D.C., and New York</h2>
+    <p>Our events feature comedians, musicians, spoken word artists, and visual artists.</p>
+
+    <!-- Email collection form with city selection -->
+    <form id="emailForm">
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        
+        <!-- Dropdown to select city -->
+        <select id="city" name="city" required>
+            <option value="" disabled selected>Select your city</option>
+            <option value="Los Angeles">Los Angeles</option>
+            <option value="Washington D.C.">Washington D.C.</option>
+            <option value="New York">New York</option>
+        </select>
+        
+        <button type="submit">Join Our Mailing List</button>
+    </form>
+
+    <p id="message" style="color:green;"></p>
+</div>
+
+<footer>
+    Follow us on social media: 
+    <a href="https://tiktok.com" style="color:white;">TikTok</a> | 
+    <a href="https://instagram.com" style="color:white;">Instagram</a>
+</footer>
+
+<script>
+    document.getElementById("emailForm").addEventListener("submit", function(event) {
+        event.preventDefault();
+        var email = document.getElementById("email").value;
+        var city = document.getElementById("city").value;
+        
+        if(city) {
+            document.getElementById("message").textContent = `Thank you for subscribing from ${city}!`;
+            // You can replace the following with your own email service integration
+            console.log("Email collected:", email, "City selected:", city);
+        } else {
+            document.getElementById("message").textContent = "Please select a city.";
+        }
+    });
+</script>
+
+</body>
+</html>
+
