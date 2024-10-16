@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crybaby Club</title>
     <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-    <style type="text/css">
+    <style type="text/css"> 
+        /* Styling for the Mailchimp form */
         #mc_embed_signup {
             background: #fff;
             clear: left;
@@ -14,55 +15,89 @@
             width: 600px;
             margin: 50px auto;
         }
+
+        /* Logo styles */
         .logo {
             display: block;
             margin: 0 auto;
-            max-width: 150px; /* Adjust the size as needed */
+            max-width: 150px;
         }
+
+        /* Background slideshow animation */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            animation: bgSlideshow 20s infinite;
+        }
+
+        @keyframes bgSlideshow {
+            0% { background-image: url('images/IMG_2897.png'); opacity: 1; }
+            20% { background-image: url('images/IMG_2698.png'); opacity: 0.5; }
+            25% { background-image: url('images/IMG_2902.png'); opacity: 1; }
+            45% { background-image: url('images/IMG_2906.png'); opacity: 0.5; }
+            50% { background-image: url('images/IMG_2910.png'); opacity: 1; }
+            70% { background-image: url('images/crybaby-favicon.png'); opacity: 0.5; }
+            75% { background-image: url('images/crybabymay.png'); opacity: 1; }
+            95% { background-image: url('images/IMG_2897.png'); opacity: 0.5; }
+            100% { background-image: url('images/IMG_2698.png'); opacity: 1; }
+        }
+
+        .container {
+            z-index: 1;
+            position: relative;
+        }
+
     </style>
 </head>
 <body>
 
-<!-- Add your logo at the top -->
-<img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
+    <!-- Add your logo at the top -->
+    <img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
 
-<div id="mc_embed_signup">
-    <form action="https://gmail.us17.list-manage.com/subscribe/post?u=d71af949ccd8f8c0707e82d1a&amp;id=b41bd72d0e&amp;f_id=00e5c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll">
-            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-            
-            <!-- Email Field -->
-            <div class="mc-field-group">
-                <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
-            </div>
-            
-            <div id="mce-responses" class="clear foot">
-                <div class="response" id="mce-error-response" style="display:none"></div>
-                <div class="response" id="mce-success-response" style="display:none"></div>
-            </div>
-            
-            <div aria-hidden="true" style="position: absolute; left: -5000px;">
-                <input type="text" name="b_d71af949ccd8f8c0707e82d1a_b41bd72d0e" tabindex="-1" value="">
-            </div>
-            
-            <div class="clear">
-                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-            </div>
+    <div class="container">
+        <!-- Mailchimp form -->
+        <div id="mc_embed_signup">
+            <form action="https://gmail.us17.list-manage.com/subscribe/post?u=d71af949ccd8f8c0707e82d1a&amp;id=b41bd72d0e&amp;f_id=00e5c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
+                <div id="mc_embed_signup_scroll">
+                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+
+                    <!-- Email Field -->
+                    <div class="mc-field-group">
+                        <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
+                        <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required value="">
+                    </div>
+
+                    <div id="mce-responses" class="clear foot">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                    </div>
+
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_d71af949ccd8f8c0707e82d1a_b41bd72d0e" tabindex="-1" value="">
+                    </div>
+
+                    <div class="clear">
+                        <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
-</div>
+    </div>
 
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-<script type="text/javascript">
-    (function($) {
-        window.fnames = new Array();
-        window.ftypes = new Array();
-        fnames[0] = 'EMAIL';
-        ftypes[0] = 'email';
-    }(jQuery));
-    var $mcj = jQuery.noConflict(true);
-</script>
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
 
 </body>
 </html>
