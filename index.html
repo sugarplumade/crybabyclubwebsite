@@ -32,7 +32,7 @@
             overflow: hidden; /* Hide overflow so the background doesn't scroll */
         }
 
-        /* Create a pseudo-element for the static background image */
+        /* Create a pseudo-element for the background slideshow */
         body::before {
             content: '';
             position: absolute;
@@ -41,16 +41,27 @@
             width: 100%;
             height: 100%;
             z-index: -1; /* Ensure background is behind everything */
-            background-image: url('images/IMG_2897.png'); /* Replace with one of your images */
             background-size: cover;
             background-position: center;
+            animation: bgSlideshow 20s infinite;
+        }
+
+        @keyframes bgSlideshow {
+            0% { background-image: url('images/IMG_2897.png'); opacity: 1; }
+            20% { background-image: url('images/IMG_2898.png'); opacity: 0.5; }
+            25% { background-image: url('images/IMG_2902.png'); opacity: 1; }
+            45% { background-image: url('images/IMG_2906.png'); opacity: 0.5; }
+            50% { background-image: url('images/IMG_2910.png'); opacity: 1; }
+            70% { background-image: url('images/crybaby-favicon.png'); opacity: 0.5; }
+            75% { background-image: url('images/crybabymay.png'); opacity: 1; }
+            95% { background-image: url('images/IMG_2897.png'); opacity: 0.5; }
+            100% { background-image: url('images/IMG_2898.png'); opacity: 1; }
         }
 
         .container {
             z-index: 1;
             position: relative;
         }
-
     </style>
 </head>
 <body>
@@ -87,6 +98,17 @@
             </form>
         </div>
     </div>
+
+    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+    <script type="text/javascript">
+        (function($) {
+            window.fnames = new Array();
+            window.ftypes = new Array();
+            fnames[0] = 'EMAIL';
+            ftypes[0] = 'email';
+        }(jQuery));
+        var $mcj = jQuery.noConflict(true);
+    </script>
 
 </body>
 </html>
