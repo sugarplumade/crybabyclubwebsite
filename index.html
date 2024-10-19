@@ -32,7 +32,7 @@
             overflow: hidden; /* Hide overflow so the background doesn't scroll */
         }
 
-        /* Create a pseudo-element for the background slideshow */
+        /* Create a pseudo-element for the background image */
         body::before {
             content: '';
             position: absolute;
@@ -41,21 +41,10 @@
             width: 100%;
             height: 100%;
             z-index: -1; /* Ensure background is behind everything */
+            background-image: url('images/IMG_2898.png');
             background-size: cover;
             background-position: center;
-            animation: bgSlideshow 20s infinite;
-        }
-
-        @keyframes bgSlideshow {
-            0% { background-image: url('images/IMG_2897.png'); opacity: 1; }
-            20% { background-image: url('images/IMG_2898.png'); opacity: 0.5; }
-            25% { background-image: url('images/IMG_2902.png'); opacity: 1; }
-            45% { background-image: url('images/IMG_2906.png'); opacity: 0.5; }
-            50% { background-image: url('images/IMG_2910.png'); opacity: 1; }
-            70% { background-image: url('images/crybaby-favicon.png'); opacity: 0.5; }
-            75% { background-image: url('images/crybabymay.png'); opacity: 1; }
-            95% { background-image: url('images/IMG_2897.png'); opacity: 0.5; }
-            100% { background-image: url('images/IMG_2898.png'); opacity: 1; }
+            opacity: 1;
         }
 
         .container {
@@ -70,7 +59,7 @@
     <img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
 
     <div class="container">
-        <!-- Mailchimp form -->
+        <!-- Mailchimp form (commented out if necessary) -->
         <div id="mc_embed_signup">
             <form action="https://gmail.us17.list-manage.com/subscribe/post?u=d71af949ccd8f8c0707e82d1a&amp;id=b41bd72d0e&amp;f_id=00e5c2e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
                 <div id="mc_embed_signup_scroll">
@@ -99,7 +88,7 @@
         </div>
     </div>
 
-    <!-- Comment out the Mailchimp and jQuery script like this -->
+    <!-- Commented-out Mailchimp script block -->
     <!-- 
     <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
     <script type="text/javascript">
