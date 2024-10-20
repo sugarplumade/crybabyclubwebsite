@@ -18,71 +18,61 @@
         }
 
         /* Styling for the background images */
-        .background {
+        .background-container {
             position: absolute;
-            top: 20px; /* Add space at the top */
-            left: 0;
+            top: 60px; /* Add more space at the top */
+            left: 50%;
+            transform: translateX(-50%);
             width: 100%;
-            height: calc(100% - 20px); /* Adjust height to account for the top space */
+            max-width: 800px; /* Control the maximum width */
+            height: auto;
             z-index: -1;
-            background-size: cover; /* Ensure the entire image is displayed */
-            background-repeat: no-repeat;
-            background-position: center;
-            opacity: 0;
-            transition: opacity 0s ease-in-out;
         }
 
-        .background.bg1 {
-            background-image: url('images/IMG_2897.png');
-            opacity: 1; /* Start with the first image visible */
-            animation: bg1Fade 40s infinite;
+        .background {
+            display: none;
+            width: 100%;
+            height: auto;
         }
 
-        .background.bg2 {
-            background-image: url('images/IMG_2893.png');
-            animation: bg2Fade 40s infinite;
-        }
-
-        .background.bg3 {
-            background-image: url('images/IMG_2906.png');
-            animation: bg3Fade 40s infinite;
-        }
-
-        .background.bg4 {
-            background-image: url('images/IMG_2910.png');
-            animation: bg4Fade 40s infinite;
+        .background.active {
+            display: block;
         }
 
         /* Keyframes for alternating the visibility of the background images */
-        @keyframes bg1Fade {
-            0%, 25% { opacity: 1; }
-            25.01%, 100% { opacity: 0; }
+        @keyframes bgSlideshow {
+            0% { opacity: 1; }
+            25% { opacity: 1; }
+            33% { opacity: 0; }
+            100% { opacity: 0; }
         }
 
-        @keyframes bg2Fade {
-            0%, 25% { opacity: 0; }
-            25.01%, 50% { opacity: 1; }
-            50.01%, 100% { opacity: 0; }
+        .background.bg1 {
+            animation: bgSlideshow 40s infinite 0s;
         }
 
-        @keyframes bg3Fade {
-            0%, 50% { opacity: 0; }
-            50.01%, 75% { opacity: 1; }
-            75.01%, 100% { opacity: 0; }
+        .background.bg2 {
+            animation: bgSlideshow 40s infinite 10s;
         }
 
-        @keyframes bg4Fade {
-            0%, 75% { opacity: 0; }
-            75.01%, 100% { opacity: 1; }
+        .background.bg3 {
+            animation: bgSlideshow 40s infinite 20s;
+        }
+
+        .background.bg4 {
+            animation: bgSlideshow 40s infinite 30s;
         }
     </style>
 </head>
 <body>
+
     <!-- Background layers -->
-    <div class="background bg1"></div>
-    <div class="background bg2"></div>
-    <div class="background bg3"></div>
-    <div class="background bg4"></div>
+    <div class="background-container">
+        <img src="images/IMG_2897.png" class="background bg1 active" alt="Background 1">
+        <img src="images/IMG_2893.png" class="background bg2" alt="Background 2">
+        <img src="images/IMG_2906.png" class="background bg3" alt="Background 3">
+        <img src="images/IMG_2910.png" class="background bg4" alt="Background 4">
+    </div>
 </body>
 </html>
 
