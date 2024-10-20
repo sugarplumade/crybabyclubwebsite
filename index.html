@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crybaby Club</title>
     <style>
-        /* Basic styling */
+        /* Basic styling for body */
         body {
             margin: 0;
             padding: 0;
@@ -16,9 +16,8 @@
             overflow: hidden;
         }
 
-        /* Background slideshow with fade effect */
-        body::before {
-            content: '';
+        /* Styling for the background images */
+        .background {
             position: absolute;
             top: 0;
             left: 0;
@@ -27,35 +26,67 @@
             z-index: -1;
             background-size: cover;
             background-position: center;
-            animation: bgSlideshow 20s infinite;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
         }
 
-        @keyframes bgSlideshow {
-            0%, 50% { background-image: url('images/IMG_2897.png'); opacity: 1; }
-            25%, 75% { background-image: url('images/IMG_2893.png'); opacity: 1; }
-            100% { background-image: url('images/IMG_2897.png'); opacity: 1; }
+        .background.bg1 {
+            background-image: url('images/IMG_2897.png');
+            opacity: 1; /* Start with the first image visible */
+            animation: bg1Fade 20s infinite;
         }
 
-        .container {
+        .background.bg2 {
+            background-image: url('images/IMG_2893.png');
+            animation: bg2Fade 20s infinite;
+        }
+
+        /* Keyframes for fading between the background images */
+        @keyframes bg1Fade {
+            0%, 50% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        @keyframes bg2Fade {
+            0%, 50% { opacity: 0; }
+            50%, 100% { opacity: 1; }
+        }
+
+        /* Logo styling */
+        .logo {
+            display: block;
+            margin: 20px auto;
+            max-width: 150px;
             z-index: 1;
             position: relative;
         }
 
-        .logo {
-            display: block;
-            margin: 0 auto;
-            max-width: 150px;
+        /* Container styling */
+        .container {
+            z-index: 1;
+            position: relative;
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+        }
+
+        h1 {
+            font-size: 2em;
         }
     </style>
 </head>
 <body>
+    <!-- Background layers -->
+    <div class="background bg1"></div>
+    <div class="background bg2"></div>
 
+    <!-- Add your logo at the top -->
     <img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
 
     <div class="container">
         <h1>Welcome to Crybaby Club</h1>
+        <p>Join us for unique events in Los Angeles, Washington D.C., and New York!</p>
     </div>
-
 </body>
 </html>
 
