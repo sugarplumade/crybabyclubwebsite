@@ -20,12 +20,12 @@
         /* Styling for the background images */
         .background {
             position: absolute;
-            top: 0;
+            top: 20px; /* Add space at the top */
             left: 0;
             width: 100%;
-            height: 100%;
+            height: calc(100% - 20px); /* Adjust height to account for the top space */
             z-index: -1;
-            background-size: contain;
+            background-size: cover; /* Ensure the entire image is displayed */
             background-repeat: no-repeat;
             background-position: center;
             opacity: 0;
@@ -75,28 +75,6 @@
             0%, 75% { opacity: 0; }
             75.01%, 100% { opacity: 1; }
         }
-
-        /* Logo styling */
-        .logo {
-            display: block;
-            margin: 20px auto;
-            max-width: 150px;
-            z-index: 1;
-            position: relative;
-        }
-
-        /* Container styling */
-        .container {
-            z-index: 1;
-            position: relative;
-            text-align: center;
-            color: white;
-            padding-top: 20px;
-        }
-
-        h1 {
-            font-size: 2em;
-        }
     </style>
 </head>
 <body>
@@ -105,14 +83,6 @@
     <div class="background bg2"></div>
     <div class="background bg3"></div>
     <div class="background bg4"></div>
-
-    <!-- Add your logo at the top -->
-    <img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
-
-    <div class="container">
-        <h1>Welcome to Crybaby Club</h1>
-        <p>Join us for unique events in Los Angeles, Washington D.C., and New York!</p>
-    </div>
 </body>
 </html>
 
