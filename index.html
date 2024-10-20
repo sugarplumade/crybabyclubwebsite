@@ -5,7 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crybaby Club</title>
-    <style>
+    <style type="text/css">
+        /* Styling for the Mailchimp form */
+        #mc_embed_signup {
+            background: #fff;
+            clear: left;
+            font: 14px Helvetica, Arial, sans-serif;
+            width: 600px;
+            margin: 50px auto;
+        }
+
+        /* Logo styles */
+        .logo {
+            display: block;
+            margin: 0 auto;
+            max-width: 150px; /* Adjust the size as needed */
+        }
+
         /* Fix the body to prevent the logo from dimming */
         body {
             margin: 0;
@@ -14,17 +30,26 @@
             position: relative;
             height: 100vh; /* Ensure full height for background */
             overflow: hidden; /* Hide overflow so the background doesn't scroll */
-            background-image: url('images/IMG_2897.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
-        /* Logo styles */
-        .logo {
-            display: block;
-            margin: 0 auto;
-            max-width: 150px; /* Adjust the size as needed */
+        /* Create a pseudo-element for the background slideshow */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure background is behind everything */
+            background-size: cover;
+            background-position: center;
+            animation: bgSlideshow 20s infinite;
+        }
+
+        @keyframes bgSlideshow {
+            0% { background-image: url('images/IMG_2897.png'); opacity: 1; }
+            50% { background-image: url('images/IMG_2893.png'); opacity: 1; }
+            100% { background-image: url('images/IMG_2897.png'); opacity: 1; }
         }
 
         .container {
@@ -39,8 +64,7 @@
     <img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
 
     <div class="container">
-        <h1>Welcome to Crybaby Club</h1>
-        <!-- Content goes here -->
+        <!-- Mailchimp form or any other content can go here -->
     </div>
 
 </body>
