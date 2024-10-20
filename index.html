@@ -35,34 +35,45 @@
         .background.bg1 {
             background-image: url('images/IMG_2897.png');
             opacity: 1; /* Start with the first image visible */
-            animation: bg1Fade 30s infinite;
+            animation: bg1Fade 40s infinite;
         }
 
         .background.bg2 {
             background-image: url('images/IMG_2893.png');
-            animation: bg2Fade 30s infinite;
+            animation: bg2Fade 40s infinite;
         }
 
         .background.bg3 {
             background-image: url('images/IMG_2906.png');
-            animation: bg3Fade 30s infinite;
+            animation: bg3Fade 40s infinite;
+        }
+
+        .background.bg4 {
+            background-image: url('images/IMG_2910.png');
+            animation: bg4Fade 40s infinite;
         }
 
         /* Keyframes for alternating the visibility of the background images */
         @keyframes bg1Fade {
-            0%, 33.33% { opacity: 1; }
-            33.34%, 100% { opacity: 0; }
+            0%, 25% { opacity: 1; }
+            25.01%, 100% { opacity: 0; }
         }
 
         @keyframes bg2Fade {
-            0%, 33.33% { opacity: 0; }
-            33.34%, 66.66% { opacity: 1; }
-            66.67%, 100% { opacity: 0; }
+            0%, 25% { opacity: 0; }
+            25.01%, 50% { opacity: 1; }
+            50.01%, 100% { opacity: 0; }
         }
 
         @keyframes bg3Fade {
-            0%, 66.66% { opacity: 0; }
-            66.67%, 100% { opacity: 1; }
+            0%, 50% { opacity: 0; }
+            50.01%, 75% { opacity: 1; }
+            75.01%, 100% { opacity: 0; }
+        }
+
+        @keyframes bg4Fade {
+            0%, 75% { opacity: 0; }
+            75.01%, 100% { opacity: 1; }
         }
 
         /* Logo styling */
@@ -93,6 +104,7 @@
     <div class="background bg1"></div>
     <div class="background bg2"></div>
     <div class="background bg3"></div>
+    <div class="background bg4"></div>
 
     <!-- Add your logo at the top -->
     <img src="images/crybaby-favicon.png" alt="Crybaby Club Logo" class="logo">
