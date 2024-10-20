@@ -25,11 +25,11 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-size: contain; /* Ensures the entire image is shown without cropping */
+            background-size: contain;
             background-repeat: no-repeat;
             background-position: center;
             opacity: 0;
-            transition: opacity 2s ease-in-out;
+            transition: opacity 0s ease-in-out;
         }
 
         .background.bg1 {
@@ -43,15 +43,15 @@
             animation: bg2Fade 20s infinite;
         }
 
-        /* Keyframes for fading between the background images */
+        /* Keyframes for alternating the visibility of the background images */
         @keyframes bg1Fade {
             0%, 50% { opacity: 1; }
-            50%, 100% { opacity: 0; }
+            50.01%, 100% { opacity: 0; }
         }
 
         @keyframes bg2Fade {
             0%, 50% { opacity: 0; }
-            50%, 100% { opacity: 1; }
+            50.01%, 100% { opacity: 1; }
         }
 
         /* Logo styling */
