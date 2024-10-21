@@ -20,19 +20,20 @@
         /* Styling for the background images */
         .background-container {
             position: absolute;
-            top: 150px; /* Increase the space at the top */
+            top: 100px; /* Adjust for more space at the top */
             left: 50%;
             transform: translateX(-50%);
             width: 100%;
             max-width: 800px; /* Control the maximum width */
-            height: auto;
+            height: 600px; /* Fixed height to match the desired aspect ratio */
             z-index: -1;
         }
 
         .background {
             display: none;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Ensures the image covers the area without stretching */
         }
 
         .background.active {
