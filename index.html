@@ -7,66 +7,51 @@
     <title>Crybaby Club</title>
     <link rel="icon" href="images/crybaby-favicon.png" type="image/png">
     <style>
-        /* Basic styling for body */
+        /* Styling for the body */
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
             position: relative;
-            height: 100vh;
-            overflow: hidden;
-            background: #000; /* Fallback background color */
+            height: 100vh; /* Full height */
+            overflow: hidden; /* Hide overflow */
+            background-color: #fff; /* Background color set to white */
         }
 
-        /* Styling for the background images */
-        .background-container {
+        /* Background image settings */
+        body::before {
+            content: '';
             position: absolute;
-            top: 100px; /* Adjust for more space at the top */
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
-            max-width: 800px; /* Control the maximum width */
-            height: 600px; /* Fixed height to match the desired aspect ratio */
-            z-index: -1;
-        }
-
-        .background {
-            display: none;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensures the image covers the area without stretching */
+            background-size: contain; /* Ensure the image fits without stretching */
+            background-position: center; /* Center the background image */
+            background-repeat: no-repeat; /* Prevent background image from repeating */
+            animation: bgSlideshow 10s infinite; /* Slideshow animation */
         }
 
-        .background.active {
-            display: block;
+        /* Keyframes for the background slideshow */
+        @keyframes bgSlideshow {
+            0% { background-image: url('images/IMG_2897.png'); }
+            33% { background-image: url('images/IMG_2893.png'); }
+            66% { background-image: url('images/IMG_2906.png'); }
+            100% { background-image: url('images/IMG_2910.png'); }
+        }
+
+        /* Container for content on top of the background */
+        .container {
+            position: relative;
+            z-index: 1; /* Ensures content stays above the background */
+            padding-top: 20px; /* Adjusts space at the top of the content */
         }
     </style>
 </head>
 <body>
-
-    <!-- Background layers -->
-    <div class="background-container">
-        <img src="images/IMG_2897.png" class="background bg1 active" alt="Background 1">
-        <img src="images/IMG_2893.png" class="background bg2" alt="Background 2">
-        <img src="images/IMG_2906.png" class="background bg3" alt="Background 3">
-        <img src="images/IMG_2910.png" class="background bg4" alt="Background 4">
+    <div class="container">
+        <!-- Any additional content goes here -->
     </div>
-
-    <script>
-        // JavaScript to cycle through images without any transition effects
-        const images = document.querySelectorAll('.background');
-        let currentIndex = 0;
-
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        // Change image every 10 seconds
-        setInterval(showNextImage, 10000);
-    </script>
-
 </body>
 </html>
 
