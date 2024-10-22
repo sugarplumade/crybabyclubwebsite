@@ -7,25 +7,24 @@
     <title>Crybaby Club</title>
     <link rel="icon" type="image/png" href="images/crybaby-favicon.png" />
 
-    <style type="text/css">
+    <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+            background-color: white;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: white;
+            align-items: flex-start; /* Align items towards the top */
+            min-height: 100vh;
         }
 
         .slideshow-container {
             position: relative;
-            width: 100%;
-            max-width: 800px;
-            height: 100%;
-            max-height: 1200px;
+            width: 800px; /* Fixed width */
+            height: 1200px; /* Fixed height */
             overflow: hidden;
+            margin-top: 20px; /* Adds space at the top */
         }
 
         .slide {
