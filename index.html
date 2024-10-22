@@ -5,60 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crybaby Club</title>
-    <link rel="icon" href="images/crybaby-favicon.png" type="image/png">
     <style>
         body {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #fff; /* Set background to white */
+            background-color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
-        /* Image container styling */
-        .slideshow {
+        .bg-image {
+            position: absolute;
+            top: 20px; /* Adjust for more space at the top */
+            left: 0;
             width: 100%;
-            max-width: 800px; /* Fixed max width */
-            max-height: 600px; /* Fixed max height */
-            object-fit: contain; /* Ensures the image maintains its aspect ratio */
-            display: block;
-            margin: auto;
-        }
-
-        .container {
-            text-align: center;
-            z-index: 1;
-            position: relative;
-            padding-top: 60px; /* Adds space at the top */
+            height: calc(100vh - 40px); /* Adjust for more space */
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
 <body>
-    <img id="slideshow-image" class="slideshow" src="images/IMG_2897.png" alt="Slideshow Image">
+    <div class="bg-image"></div>
 
     <script>
-        // Array of image URLs
+        // JavaScript for cycling through the images
         const images = [
             'images/IMG_2897.png',
             'images/IMG_2893.png',
             'images/IMG_2906.png',
-            'images/IMG_2910.png'
+            'images/IMG_2910.png',
+            'images/crybabyla0824.jpg',
+            'images/crybabyla0924.jpg',
+            'images/crybabyla1024.jpg',
+            'images/crybabyla0624.jpg'
         ];
 
         let currentIndex = 0;
-        const imageElement = document.getElementById('slideshow-image');
+        const bgImage = document.querySelector('.bg-image');
 
-        // Function to change the image every 10 seconds
         function changeImage() {
+            bgImage.style.backgroundImage = `url('${images[currentIndex]}')`;
             currentIndex = (currentIndex + 1) % images.length;
-            imageElement.src = images[currentIndex];
         }
 
-        // Change image every 10 seconds (10000 milliseconds)
-        setInterval(changeImage, 10000);
+        setInterval(changeImage, 10000); // Change image every 10 seconds
+        changeImage(); // Initial call to set the first image
     </script>
 </body>
 </html>
