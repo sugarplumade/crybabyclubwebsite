@@ -5,32 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crybaby Club</title>
+    <link rel="icon" href="images/crybaby-favicon.png" type="image/png">
     <style>
         body {
             margin: 0;
-            padding: 40px;
+            padding: 0;
             font-family: Arial, sans-serif;
             background-color: white;
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+
+        .spacer {
+            height: 100px; /* Adjust this value to control the space at the top */
+            width: 100%;
         }
 
         .container {
             position: relative;
-            top: 20px; /* Adjust the top margin */
+            height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
             width: 100%;
-            max-width: 1200px; /* Adjust as needed */
-            text-align: center;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .bg-image {
             position: absolute;
-            top: 40px; /* Adjust for more space at the top */
+            top: 0;
             left: 0;
             width: 100%;
-            height: calc(100vh - 100px); /* Adjust for more space */
+            height: 100%;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -38,11 +46,17 @@
     </style>
 </head>
 <body>
+
+    <!-- Spacer for extra space at the top -->
+    <div class="spacer"></div>
+
+    <!-- Main container with images -->
     <div class="container">
         <div class="bg-image"></div>
     </div>
 
     <script>
+        // JavaScript for cycling through the images
         const images = [
             'images/IMG_2897.png',
             'images/IMG_2893.png',
