@@ -16,6 +16,7 @@
             justify-content: center;
             align-items: flex-start;
             min-height: 100vh;
+            overflow: hidden;
         }
 
         .spacer {
@@ -43,12 +44,42 @@
             background-position: center;
             background-repeat: no-repeat;
         }
+
+        /* Top navigation */
+        .top-nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+            padding: 8px 12px;
+            border: 1px solid black;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .top-nav a:hover {
+            background-color: black;
+            color: white;
+        }
     </style>
 </head>
 <body>
 
     <!-- Spacer for extra space at the top -->
     <div class="spacer"></div>
+
+    <!-- Top navigation with About and Subscribe links -->
+    <div class="top-nav">
+        <a href="#about">About</a>
+        <a href="#subscribe">Subscribe</a>
+    </div>
 
     <!-- Main container with images -->
     <div class="container">
