@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Crybaby Club</title>
+    <link rel="icon" href="images/crybaby-favicon.png" type="image/png">
     <style>
         body {
             margin: 0;
@@ -13,31 +14,31 @@
             background-color: white;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Align items to the top with some space */
-            height: 100vh;
-            flex-direction: column;
+            align-items: flex-start;
+            min-height: 100vh;
         }
 
-        /* Spacer to add top padding */
         .spacer {
-            height: 50px; /* Adjust this for the space you need */
+            height: 100px; /* Adjust this value to control the space at the top */
             width: 100%;
         }
 
-        /* Center the container for images */
         .container {
+            position: relative;
+            height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
+            width: 100%;
+            top: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
         }
 
-        /* Image styling */
         .bg-image {
-            width: auto;
-            height: 80vh; /* Adjust height as needed */
-            max-width: 100%;
-            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
@@ -45,8 +46,11 @@
     </style>
 </head>
 <body>
-    <div class="spacer"></div> <!-- Spacer div for top space -->
 
+    <!-- Spacer for extra space at the top -->
+    <div class="spacer"></div>
+
+    <!-- Main container with images -->
     <div class="container">
         <div class="bg-image"></div>
     </div>
