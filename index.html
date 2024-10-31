@@ -14,24 +14,23 @@
             background-color: white;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
+            align-items: center;
             min-height: 100vh;
             overflow: hidden;
         }
 
         .spacer {
-            height: 100px; /* Adjust this value to control the space at the top */
+            height: 100px; /* Adds extra space at the top */
             width: 100%;
         }
 
         .container {
             position: relative;
-            height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
-            width: 100%;
+            width: auto;
+            height: calc(100vh - 100px); /* Keeps content area with space at the top */
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
         }
 
         .bg-image {
@@ -40,14 +39,12 @@
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            margin: 0 auto;
         }
 
         /* Style for the buttons */
         .button {
             position: absolute;
             top: 20px;
-            right: 20px;
             padding: 10px 20px;
             background-color: white;
             border: 1px solid black;
@@ -58,13 +55,15 @@
         }
 
         .about-button {
-            top: 20px;
             left: 20px;
+        }
+
+        .subscribe-button {
+            right: 20px;
         }
     </style>
 </head>
 <body>
-
     <!-- Spacer for extra space at the top -->
     <div class="spacer"></div>
 
@@ -75,7 +74,7 @@
 
     <!-- About and Subscribe Buttons -->
     <a href="#about" class="button about-button">About</a>
-    <a href="#subscribe" class="button">Subscribe</a>
+    <a href="#subscribe" class="button subscribe-button">Subscribe</a>
 
     <script>
         // JavaScript for cycling through the images
