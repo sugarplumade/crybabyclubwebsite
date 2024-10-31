@@ -14,7 +14,7 @@
             background-color: white;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             overflow: hidden;
         }
@@ -26,41 +26,20 @@
 
         .container {
             position: relative;
-            width: auto;
-            height: calc(100vh - 100px); /* Keeps content area with space at the top */
+            width: 100%;
+            height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
             display: flex;
             justify-content: center;
             align-items: center;
         }
 
         .bg-image {
-            width: auto;
+            width: 100%;
             height: 100%;
+            background-image: url('images/IMG_2897.png'); /* Change this to the image you want to test */
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            background-image: url('images/IMG_2897.png'); /* Test with one image */
-        }
-
-        /* Style for the buttons */
-        .button {
-            position: absolute;
-            top: 20px;
-            padding: 10px 20px;
-            background-color: white;
-            border: 1px solid black;
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            border-radius: 5px;
-        }
-
-        .about-button {
-            left: 20px;
-        }
-
-        .subscribe-button {
-            right: 20px;
         }
     </style>
 </head>
@@ -68,14 +47,10 @@
     <!-- Spacer for extra space at the top -->
     <div class="spacer"></div>
 
-    <!-- Main container with one test image -->
+    <!-- Main container with a single image -->
     <div class="container">
         <div class="bg-image"></div>
     </div>
-
-    <!-- About and Subscribe Buttons -->
-    <a href="#about" class="button about-button">About</a>
-    <a href="#subscribe" class="button subscribe-button">Subscribe</a>
 </body>
 </html>
 
