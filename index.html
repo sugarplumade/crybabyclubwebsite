@@ -39,6 +39,7 @@
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            background-image: url('images/IMG_2897.png'); /* Test with one image */
         }
 
         /* Style for the buttons */
@@ -67,7 +68,7 @@
     <!-- Spacer for extra space at the top -->
     <div class="spacer"></div>
 
-    <!-- Main container with images -->
+    <!-- Main container with one test image -->
     <div class="container">
         <div class="bg-image"></div>
     </div>
@@ -75,31 +76,6 @@
     <!-- About and Subscribe Buttons -->
     <a href="#about" class="button about-button">About</a>
     <a href="#subscribe" class="button subscribe-button">Subscribe</a>
-
-    <script>
-        // JavaScript for cycling through the images
-        const images = [
-            'images/IMG_2897.png',
-            'images/IMG_2893.png',
-            'images/IMG_2906.png',
-            'images/IMG_2910.png',
-            'images/crybabyla0824.jpg',
-            'images/crybabyla0924.jpg',
-            'images/crybabyla1024.jpg',
-            'images/crybabyla0624.jpg'
-        ];
-
-        let currentIndex = 0;
-        const bgImage = document.querySelector('.bg-image');
-
-        function changeImage() {
-            bgImage.style.backgroundImage = `url('${images[currentIndex]}')`;
-            currentIndex = (currentIndex + 1) % images.length;
-        }
-
-        setInterval(changeImage, 7000); // Change image every 7 seconds
-        changeImage(); // Initial call to set the first image
-    </script>
 </body>
 </html>
 
