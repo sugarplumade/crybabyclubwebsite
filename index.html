@@ -18,6 +18,28 @@
             min-height: 100vh;
         }
 
+        .nav-bar {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+        }
+
+        .nav-bar button {
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: 2px solid black;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .nav-bar button:hover {
+            background-color: black;
+            color: white;
+        }
+
         .spacer {
             height: 100px; /* Adds extra space at the top */
             width: 100%;
@@ -32,12 +54,18 @@
         }
 
         .img-display {
-            max-width: 60%;
+            max-width: 100%;
             height: auto;
         }
     </style>
 </head>
 <body>
+    <!-- Navigation bar with buttons -->
+    <div class="nav-bar">
+        <button onclick="window.location.href='#about'">About</button>
+        <button onclick="window.location.href='#subscribe'">Subscribe</button>
+    </div>
+
     <!-- Spacer for extra space at the top -->
     <div class="spacer"></div>
 
