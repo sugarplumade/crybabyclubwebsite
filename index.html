@@ -13,31 +13,27 @@
             font-family: Arial, sans-serif;
             background-color: white;
             display: flex;
-            justify-content: center;
-            align-items: flex-start;
+            flex-direction: column;
+            align-items: center;
             min-height: 100vh;
-            overflow: hidden;
         }
 
         .spacer {
-            height: 1000px; /* Adds extra space at the top */
+            height: 100px; /* Adds extra space at the top */
             width: 100%;
         }
 
         .container {
-            width: 100%;
-            height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 100%;
+            height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
         }
 
-        img.bg-image {
-            max-width: 60%;
-            max-height: 80%;
-            margin: auto:
-            display: block;
-            object-fit: contain;
+        .img-display {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
@@ -45,9 +41,9 @@
     <!-- Spacer for extra space at the top -->
     <div class="spacer"></div>
 
-    <!-- Main container with a single image -->
+    <!-- Main container with an img tag -->
     <div class="container">
-        <img src="images/IMG_2897.png" alt="Cry Baby Club Image" class="bg-image"></div>
+        <img src="images/IMG_2897.png" alt="Display Image" class="img-display">
     </div>
 </body>
 </html>
