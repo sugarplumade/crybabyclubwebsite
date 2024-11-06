@@ -16,16 +16,22 @@
             flex-direction: column;
             align-items: center;
             min-height: 100vh;
+ 	    justify-content: center;	
         }
 
         .nav-bar {
+	    position: fixed;
+	    top: 0;		
             width: 100%;
             display: flex;
             justify-content: flex-end;
             padding: 10px 20px;
+            background-color: white;
+            z-index: 1;
+	    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 	 
         }
 
-        .nav-bar button {
+        .nav-bar button {	
             margin-left: 10px;
             padding: 10px 20px;
             font-size: 16px;
@@ -51,6 +57,7 @@
             align-items: center;
             width: 100%;
             height: calc(100vh - 100px); /* Ensures the content area takes up the remaining screen height */
+            padding-top: 20px;
         }
 
         .img-display {
